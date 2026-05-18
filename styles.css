@@ -1,0 +1,81 @@
+/* 1. RESETEO GLOBAL: Borra los márgenes raros que los navegadores traen por defecto */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Hace que calcular tamaños de cajas sea más fácil */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Tipografía limpia */
+}
+
+/* 2. ESTILOS DEL CUERPO (BODY) */
+body {
+    background-color: #f4f7f6; /* Color de fondo gris muy claro */
+    color: #333333; /* Texto color gris oscuro para que no canse la vista */
+}
+
+/* 3. ENCABEZADO Y MENÚ (Uso de Flexbox básico) */
+header {
+    background-color: #0056b3; /* Azul corporativo tipo gran empresa */
+    padding: 20px;
+}
+
+nav ul {
+    list-style: none; /* Le quita los puntitos negros a la lista */
+    display: flex; /* ¡MÁGICA ACTIVACIÓN DE FLEXBOX! Coloca los elementos en fila */
+    justify-content: center; /* Centra horizontalmente los elementos del menú */
+    gap: 30px; /* Crea una separación exacta de 30px entre cada enlace */
+}
+
+nav ul li a {
+    text-decoration: none; /* Le quita la línea subrayada de abajo a los enlaces */
+    color: #ffffff; /* Texto blanco */
+    font-weight: bold; /* Letra en negrita */
+    font-size: 16px;
+}
+
+/* Efecto Hover: Cambia de color cuando pasas el ratón por encima */
+nav ul li a:hover {
+    color: #ffc107; /* Color amarillo corporativo al pasar el mouse */
+}
+
+/* 4. SECCIÓN PRINCIPAL */
+main {
+    max-width: 1200px; /* Evita que la página se desarme en pantallas gigantes */
+    margin: 40px auto; /* Centra el bloque entero en la pantalla y da margen arriba/abajo */
+    padding: 0 20px;
+}
+
+/* Tarjeta Hero / Bienvenida */
+section {
+    background-color: #ffffff; /* Fondo blanco para simular una tarjeta limpia */
+    padding: 30px;
+    border-radius: 8px; /* Bordes redondeados modernos */
+    margin-bottom: 30px; /* Separación con la siguiente tarjeta */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidad */
+}
+
+h1 {
+    color: #0056b3;
+    margin-bottom: 15px; /* Separa el título del párrafo */
+}
+
+p {
+    line-height: 1.6; /* Da espacio entre líneas de texto para mejorar la lectura */
+    margin-bottom: 20px;
+}
+
+/* Estilo del Botón */
+button {
+    background-color: #008cff; /* Color naranja llamativo */
+    color: white;
+    border: none; /* Quita el borde feo por defecto */
+    padding: 12px 24px; /* Tamaño del botón (arriba/abajo, izquierda/derecha) */
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer; /* Cambia el cursor a una manito al pasar sobre él */
+    transition: background 0.3s ease; /* Suaviza el cambio de color */
+}
+
+button:hover {
+    background-color: #e65c00; /* Naranja más oscuro al pasar el mouse */
+}
