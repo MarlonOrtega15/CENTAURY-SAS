@@ -1,81 +1,165 @@
-/* 1. RESETEO GLOBAL: Borra los márgenes raros que los navegadores traen por defecto */
+/* 1. RESETEO GLOBAL Y FUENTES (Para que se vea limpio en cualquier navegador) */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Hace que calcular tamaños de cajas sea más fácil */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Tipografía limpia */
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* 2. ESTILOS DEL CUERPO (BODY) */
 body {
-    background-color: #f4f7f6; /* Color de fondo gris muy claro */
-    color: #333333; /* Texto color gris oscuro para que no canse la vista */
+    background-color: #f4f6f9; /* Fondo gris claro muy limpio */
+    color: #333333;
+    line-height: 1.6;
 }
 
-/* 3. ENCABEZADO Y MENÚ (Uso de Flexbox básico) */
+/* 2. ENCABEZADO Y LOGO (COLORES DE HOJA MEMBRETE)*/
 header {
-    background-color: #0056b3; /* Azul corporativo tipo gran empresa */
-    padding: 20px;
+    background-color: #ffffff;
+    border-bottom: 4px solid #0046c7; /*Cambio al azul Rey vivo del membrete*/
+    padding: 20px 50px;
+    display: flex; /*OBLIGATORIO PARA QUE FUNCIONE JUSTIFY Y ALIGN!*/
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
+.logo h1{
+    color: #0046c7; /*Azul Rey para el nombre principal*/
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+
+}
+
+.logo span{
+    color: #4a4a4a; /* cambiado al gris oscuro del membrete para el SAS*/
+
+}
+
+/* 3. MENÚ DE NAVEGACIÓN PROFESIONAL*/
 nav ul {
-    list-style: none; /* Le quita los puntitos negros a la lista */
-    display: flex; /* ¡MÁGICA ACTIVACIÓN DE FLEXBOX! Coloca los elementos en fila */
-    justify-content: center; /* Centra horizontalmente los elementos del menú */
-    gap: 30px; /* Crea una separación exacta de 30px entre cada enlace */
+    list-style: none;
+    display: flex;
+    gap: 35px;
 }
 
 nav ul li a {
-    text-decoration: none; /* Le quita la línea subrayada de abajo a los enlaces */
-    color: #ffffff; /* Texto blanco */
-    font-weight: bold; /* Letra en negrita */
+    text-decoration: none;
+    color: #4a4a4a; /* gris corporativo*/
+    font-weight: 600;
     font-size: 16px;
+    transition: all 0.3s ease;
+    padding: 8px 15px;
+    border-radius: 4px;
 }
-
-/* Efecto Hover: Cambia de color cuando pasas el ratón por encima */
 nav ul li a:hover {
-    color: #ffc107; /* Color amarillo corporativo al pasar el mouse */
+    color: #0046c7;
+    background-color: #e6edfa; /*findo azul muy siave al pasar el mause*/
+
 }
 
-/* 4. SECCIÓN PRINCIPAL */
+/* 4. SECCIÓM HERO / BIENVENIDA (ENFOQUE EN PROYECTOS CIVILES */
+.hero {
+    background: linear-gradient(135deg, #003399 0%,#0046c7 100%); /*degradado con azul rey*/
+    color: #ffffff;
+    padding: 90px 50px;
+    text-align: center;
+}
+
+.hero h2{
+    font-size: 38px;
+    margin-bottom: 15px;
+    font-weight: 700;
+
+}
+
+.hero p {
+    font-size: 19px;
+    max-width: 850px;
+    margin: 0 auto 30px auto;
+    opacity: 0.95;
+}
+
+.btn-primario{
+    display: inline-block;
+    background-color: #ffffff; /*Boton blanco limpio*/
+    color: #0046c7; /*Letras azul rey*/
+    text-decoration: none;
+    padding: 13px 35px;
+    font-weight: 700;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    border: 2px solid #ffffff;
+}
+
+.btn-primario:hover {
+    background-color: transparent;
+    color: #ffffff; /*se invierten los colores al pasar el mouse*/
+
+}
+
+/* 5. CONTENIDO PRINCIPAL Y CUADRICULA (ESTILO DATACREDITO) */
 main {
-    max-width: 1200px; /* Evita que la página se desarme en pantallas gigantes */
-    margin: 40px auto; /* Centra el bloque entero en la pantalla y da margen arriba/abajo */
-    padding: 0 20px;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding:  0 20px;
 }
 
-/* Tarjeta Hero / Bienvenida */
-section {
-    background-color: #ffffff; /* Fondo blanco para simular una tarjeta limpia */
+.section-title {
+    text-align: center;
+    color: #0046c7;
+    margin-bottom: 35px;
+    font-size: 28px;
+    font-weight: 700;
+
+}
+
+/* Aqui esta la rejilla que busca el <div class="grid-servicios"> de tu html*/
+.grid-servicios{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/*Aqui estan las tarjetas de buscan el <div class="card-empesarial">*/
+.card-empresarial{
+    background: #ffffff;
+    border-radius: 8px;
     padding: 30px;
-    border-radius: 8px; /* Bordes redondeados modernos */
-    margin-bottom: 30px; /* Separación con la siguiente tarjeta */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidad */
+    border-top: 4px solid #0046c7; /* Linea azul rey arriba de cada tarjeta */
+    box-shadow: 0 4px 20px rgb(0, 0, 0 , 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-h1 {
-    color: #0056b3;
-    margin-bottom: 15px; /* Separa el título del párrafo */
+.card-empresarial:hover{
+    transform: translateY(-5px); /*eleva la tarjeta*/
+    box-shadow: 0 8px 25px rgba(0, 46, 199, 0.12); /*sombra mas profunda */
 }
 
-p {
-    line-height: 1.6; /* Da espacio entre líneas de texto para mejorar la lectura */
-    margin-bottom: 20px;
+.card-empresarial h3{
+    color: #0046c7;
+    font-size: 20px;
+    margin-bottom: 12px;
+    font-weight: 700;
 }
 
-/* Estilo del Botón */
-button {
-    background-color: #008cff; /* Color naranja llamativo */
-    color: white;
-    border: none; /* Quita el borde feo por defecto */
-    padding: 12px 24px; /* Tamaño del botón (arriba/abajo, izquierda/derecha) */
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer; /* Cambia el cursor a una manito al pasar sobre él */
-    transition: background 0.3s ease; /* Suaviza el cambio de color */
+.card-empresarial p{
+    color: #4a4a4a;
+    font-size: 15px;
+    line-height: 1.6;
+
 }
 
-button:hover {
-    background-color: #e65c00; /* Naranja más oscuro al pasar el mouse */
+/* 6. PIE DE PAGINA (FOOTER- GRIS OSCURO DE LA BASE DEL MEMBRETE)*/
+footer{
+    background-color: #1a1a1a; /*gis casi negro, muy elegante*/
+    color: #ffffff;
+    text-align: center;
+    padding: 25px;
+    margin-top: 80px;
+    font-size: 14px;
+    border-top: 5px solid #0046c7;
+
 }
+
