@@ -10,6 +10,7 @@ body {
     background-color: #f4f6f9; /* Fondo gris claro muy limpio */
     color: #333333;
     line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Suaviza el cambio de color */
 }
 
 /* 2. ENCABEZADO Y LOGO (COLORES DE HOJA MEMBRETE)*/
@@ -28,12 +29,26 @@ header {
     font-size: 26px;
     font-weight: 800;
     letter-spacing: 0.5px;
-
 }
 
 .logo span{
     color: #4a4a4a; /* cambiado al gris oscuro del membrete para el SAS*/
+}
 
+/* Estilo para tu botón interactivo */
+.btn-modo {
+    background-color: #4a4a4a;
+    color: #ffffff;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-modo:hover {
+    background-color: #0046c7;
 }
 
 /* 3. MENÚ DE NAVEGACIÓN PROFESIONAL*/
@@ -55,7 +70,6 @@ nav ul li a {
 nav ul li a:hover {
     color: #0046c7;
     background-color: #e6edfa; /*findo azul muy siave al pasar el mause*/
-
 }
 
 /* 4. SECCIÓM HERO / BIENVENIDA (ENFOQUE EN PROYECTOS CIVILES */
@@ -70,7 +84,6 @@ nav ul li a:hover {
     font-size: 38px;
     margin-bottom: 15px;
     font-weight: 700;
-
 }
 
 .hero p {
@@ -95,14 +108,13 @@ nav ul li a:hover {
 .btn-primario:hover {
     background-color: transparent;
     color: #ffffff; /*se invierten los colores al pasar el mouse*/
-
 }
 
 /* 5. CONTENIDO PRINCIPAL Y CUADRICULA (ESTILO DATACREDITO) */
 main {
     max-width: 1200px;
     margin: 50px auto;
-    padding:  0 20px;
+    padding:   0 20px;
 }
 
 .section-title {
@@ -111,7 +123,6 @@ main {
     margin-bottom: 35px;
     font-size: 28px;
     font-weight: 700;
-
 }
 
 /* Aqui esta la rejilla que busca el <div class="grid-servicios"> de tu html*/
@@ -122,13 +133,14 @@ main {
     margin-top: 20px;
 }
 
-/*Aqui estan las tarjetas de buscan el <div class="card-empesarial">*/
+/*Aqui estan las tarjetas de buscan el <div class="card-empresarial">*/
 .card-empresarial{
     background: #ffffff;
     border-radius: 8px;
     padding: 30px;
     border-top: 4px solid #0046c7; /* Linea azul rey arriba de cada tarjeta */
-    box-shadow: 0 4px 20px rgb(0, 0, 0 , 0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0 , 0.05); /* CORREGIDO: cambiado rgb por rgba */
+    /* 👇 ESTA ES LA LÍNEA MÁGICA DE RENDIMIENTO VISUAL 👇 */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -148,7 +160,6 @@ main {
     color: #4a4a4a;
     font-size: 15px;
     line-height: 1.6;
-
 }
 
 /* 6. PIE DE PAGINA (FOOTER- GRIS OSCURO DE LA BASE DEL MEMBRETE)*/
@@ -160,6 +171,49 @@ footer{
     margin-top: 80px;
     font-size: 14px;
     border-top: 5px solid #0046c7;
-
 }
 
+/* ==========================================================================
+   7. LO QUE HACÍA FALTA: REGLAS PARA EL MODO OSCURO (CON EL !IMPORTANT)
+   ========================================================================== */
+
+/* Recuerda: body y .dark-mode van PEGADOS sin espacios en el teclado */
+body.dark-mode {
+    background-color: #121212 !important; /* El fondo se vuelve gris oscuro */
+    color: #e0e0e0 !important; /* Las letras generales se vuelven claras */
+}
+
+body.dark-mode header {
+    background-color: #1e1e1e !important; /* El encabezado se oscurece */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important;
+}
+
+body.dark-mode .logo h1 {
+    color: #ffffff !important; /* CENTAURY se ilumina en blanco */
+}
+
+body.dark-mode .logo span {
+    color: #b0b0b0 !important; /* El S.A.S. se suaviza a gris claro */
+}
+
+body.dark-mode nav ul li a {
+    color: #e0e0e0 !important; /* Los textos del menú cambian a claro */
+}
+
+body.dark-mode nav ul li a:hover {
+    background-color: #2a2a2a !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .card-empresarial {
+    background-color: #1e1e1e !important; /* Las tarjetas se vuelven oscuras */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+body.dark-mode .card-empresarial h3 {
+    color: #ffffff !important; /* Título de la tarjeta en blanco */
+}
+
+body.dark-mode .card-empresarial p {
+    color: #b0b0b0 !important; /* Texto explicativo en gris suave */
+}
